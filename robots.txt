@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chandanmysorebalakrishna.github.io/sitemap.xml
