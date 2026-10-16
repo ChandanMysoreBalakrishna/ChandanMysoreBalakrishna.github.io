@@ -49,7 +49,7 @@ window.SITE_DATA = {
     },
     {
       group: "Artificial Intelligence",
-      items: ["Generative AI", "AI Agents", "Model Context Protocol (MCP)", "AI Copilots", "Prompt Engineering", "Spring AI", "LangChain", "LangFuse"]
+      items: ["Generative AI", "AI Agents", "Model Context Protocol (MCP)", "AI Copilots", "Prompt Engineering", "Spring AI", "LangChain", "LangGraph", "LangFuse"]
     },
     {
       group: "Product Strategy & Delivery",
