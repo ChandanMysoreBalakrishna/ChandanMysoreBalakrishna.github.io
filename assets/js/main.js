@@ -51,6 +51,29 @@
     stats.appendChild(item);
   });
 
+  // Key highlights
+  const highlightGrid = document.getElementById("highlightGrid");
+  (data.highlights || []).forEach((h, i) => {
+    const card = el("article", "highlight-card reveal");
+    card.append(
+      el("div", "highlight-index", String(i + 1).padStart(2, "0")),
+      el("h3", "highlight-title", h.title),
+      el("p", "highlight-text", h.text)
+    );
+    highlightGrid.appendChild(card);
+  });
+
+  // Skills
+  const skillGrid = document.getElementById("skillGrid");
+  (data.skills || []).forEach((g) => {
+    const card = el("div", "skill-card reveal");
+    card.appendChild(el("h3", "skill-group", g.group));
+    const list = el("div", "skill-list");
+    g.items.forEach((s) => list.appendChild(el("span", "skill", s)));
+    card.appendChild(list);
+    skillGrid.appendChild(card);
+  });
+
   // Filters
   const active = new Set(Object.keys(TYPES));
   const filters = document.getElementById("filters");
@@ -78,14 +101,14 @@
   timeline.appendChild(line);
 
   const sorted = [...data.timeline].sort((a, b) => {
-    if (!a.start) return -1;
-    if (!b.start) return 1;
+    if (!a.start) return 1;
+    if (!b.start) return -1;
     return b.start.localeCompare(a.start);
   });
 
   let lastYear = null;
   sorted.forEach((entry) => {
-    const year = entry.start ? entry.start.slice(0, 4) : "Now";
+    const year = entry.start ? entry.start.slice(0, 4) : entry.marker || "Earlier";
     if (year !== lastYear) {
       const marker = el("div", "year-marker reveal", year);
       marker.dataset.year = year;
