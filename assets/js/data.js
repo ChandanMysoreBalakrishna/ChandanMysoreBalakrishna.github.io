@@ -82,8 +82,8 @@ window.SITE_DATA = {
     },
     {
       label: "GitHub",
-      value: "github.com/chandanmb",
-      href: "https://github.com/chandanmb",
+      value: "github.com/ChandanMysoreBalakrishna",
+      href: "https://github.com/ChandanMysoreBalakrishna",
       icon: "github"
     }
     // { label: "Email", value: "you@example.com", href: "mailto:you@example.com", icon: "mail" }
